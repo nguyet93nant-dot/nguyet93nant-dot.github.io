@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST 1 TRẮC NGHIỆM CẤP TRƯỜNG KHỐI 5</title>
+    <style>
+        :root {
+            --primary-color: #0275d8;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --background-color: #f4f6f9;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .quiz-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #666;
+        }
+        .question-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+        .question-text {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .question-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: block;
+            max-height: 200px;
+        }
+        .options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .option-label:hover {
+            background: #e9ecef;
+            border-color: #b5bbc1;
+        }
+        .option-label input {
+            margin-right: 12px;
+            transform: scale(1.2);
+        }
+        .fill-blank-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .fill-blank-input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(2, 117, 216, 0.3);
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 30px;
+        }
+        .btn-submit:hover {
+            background: #01549b;
+        }
+        #result-box {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>TEST 1 TRẮC NGHIỆM CẤP TRƯỜNG KHỐI 5</h1>
+        <div class="quiz-info">
+            <span>Môn: Tiếng Anh IOE</span>
+            <span id="timer">Thời gian: 20:00</span>
+        </div>
+    </div>
+
+    <form id="quiz-form">
+        <!-- Câu 2 -->
+        <div class="question-box">
+            <div class="question-text">Câu 1. She t_ _ _ lots of photos at the food festival yesterday. (Điền từ còn thiếu)</div>
+            <input type="text" class="fill-blank-input" id="q2" placeholder="Nhập từ tiếng Anh đầy đủ...">
+        </div>
+
+        <!-- Câu 3 -->
+        <div class="question-box">
+            <div class="question-text">Câu 2. How often do you visit your grandparents? - Once a w_ _ _. (Điền từ còn thiếu)</div>
+            <input type="text" class="fill-blank-input" id="q3" placeholder="Nhập từ tiếng Anh đầy đủ...">
+        </div>
+
+        <!-- Câu 4 -->
+        <div class="question-box">
+            <div class="question-text">Câu 3. The city is crowded ___ busy.</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q4" value="A"> A. or</label>
+                <label class="option-label"><input type="radio" name="q4" value="B"> B. but</label>
+                <label class="option-label"><input type="radio" name="q4" value="C"> C. with</label>
+                <label class="option-label"><input type="radio" name="q4" value="D"> D. and</label>
+            </div>
+        </div>
+
+        <!-- Câu 6 -->
+        <div class="question-box">
+            <div class="question-text">Câu 4. Write a question for the underlined part: <u>My house is big and new.</u> I love it.</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q6" value="A"> A. Who do you live with?</label>
+                <label class="option-label"><input type="radio" name="q6" value="B"> B. Where are you living now?</label>
+                <label class="option-label"><input type="radio" name="q6" value="C"> C. What's your house like?</label>
+                <label class="option-label"><input type="radio" name="q6" value="D"> D. What's your address?</label>
+            </div>
+        </div>
+
+        <!-- Câu 8 -->
+        <div class="question-box">
+            <div class="question-text">Câu 5. Where _ _ Ba and Hung live? (Điền từ còn thiếu)</div>
+            <input type="text" class="fill-blank-input" id="q8" placeholder="Nhập 2 chữ cái...">
+        </div>
+
+        <!-- Câu 9 -->
+        <div class="question-box">
+            <div class="question-text">Câu 6. My favourite food is _____.</div>
+            <img src="https://unsplash.com" class="question-img" alt="Chicken">
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q9" value="A"> A. pork</label>
+                <label class="option-label"><input type="radio" name="q9" value="B"> B. fish</label>
+                <label class="option-label"><input type="radio" name="q9" value="C"> C. beef</label>
+                <label class="option-label"><input type="radio" name="q9" value="D"> D. chicken</label>
+            </div>
+        </div>
+
+        <!-- Câu 10 -->
+        <div class="question-box">
+            <div class="question-text">Câu 7. She al_ _ _ _ _ finishes her homework before going to bed. (Điền từ còn thiếu)</div>
+            <input type="text" class="fill-blank-input" id="q10" placeholder="Nhập từ hoàn chỉnh...">
+        </div>
+
+        <!-- Câu 13 -->
+        <div class="question-box">
+            <div class="question-text">Câu 8. Is this your desk? – ....</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q13" value="A"> A. No. That desk is my</label>
+                <label class="option-label"><input type="radio" name="q13" value="B"> B. No. That my desk is</label>
+                <label class="option-label"><input type="radio" name="q13" value="C"> C. No. That desk my</label>
+                <label class="option-label"><input type="radio" name="q13" value="D"> D. No. That's my desk</label>
+            </div>
+        </div>
+
+        <!-- Câu 19 -->
+        <div class="question-box">
+            <div class="question-text">Câu 9. Tony flies back to Australia. Which kind of transportation does he use?</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q19" value="A"> A. Car</label>
+                <label class="option-label"><input type="radio" name="q19" value="B"> B. Underground</label>
+                <label class="option-label"><input type="radio" name="q19" value="C"> C. Train</label>
+                <label class="option-label"><input type="radio" name="q19" value="D"> D. Plane</label>
+            </div>
+        </div>
+
+        <!-- Câu 20 -->
+        <div class="question-box">
+            <div class="question-text">Câu 10. Put the adverb in the brackets into the correct place: They go to the cinema on weekends. (often)</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q20" value="A"> A. They go to the often cinema on weekends.</label>
+                <label class="option-label"><input type="radio" name="q20" value="B"> B. They go often to the cinema on weekends.</label>
+                <label class="option-label"><input type="radio" name="q20" value="C"> C. Often they go to the cinema on weekends.</label>
+                <label class="option-label"><input type="radio" name="q20" value="D"> D. They often go to the cinema on weekends.</label>
+            </div>
+        </div>
